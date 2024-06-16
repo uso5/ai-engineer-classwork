@@ -19,12 +19,11 @@ def get_user_tweets(username):
         tweets.append(tweet._json)
     return tweets
 
-# Replace 'twitter_username' with the actual username of the account you want to scrape tweets from
 username = 'twitter_username'
 tweets = get_user_tweets(username)
 
-# Optionally, save the tweets to a CSV file
+# Save the tweets to a CSV file
 df = pd.DataFrame(tweets)
-df.to_csv(f'{username}_tweets.csv', index=False)
+df.to_csv(f'data/sample_tweets.csv', index=False)
 
 print(f'Downloaded {len(tweets)} tweets from {username}')
